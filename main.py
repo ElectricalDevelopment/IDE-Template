@@ -8,8 +8,8 @@ path_for_file = ''
 
 
 def set_file_path(path):
-    global file_path
-    file_path = path
+    global path_for_file
+    path_for_file = path
 
 
 def open_file():
@@ -22,10 +22,10 @@ def open_file():
 
 
 def save_as():
-    if file_path == '':
+    if path_for_file == '':
         path = asksaveasfilename(filetypes=[('Python Files', '*.py')])
     else:
-        path = file_path
+        path = path_for_file
     with open(path, 'w') as file:
         code = editor.get('1.0', END)
         file.write(code)
@@ -33,12 +33,12 @@ def save_as():
 
 
 def run():
-    if file_path == '':
+    if path_for_file == '':
         save_prompt = Toplevel()
         text = Label(save_prompt, text='Please save your code')
         text.pack()
         return
-    command = f'python {file_path}'
+    command = f'python {path_for_file}'
     process = subprocess.Popen(command, stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
     output, error = process.communicate()
     output_for_code.insert('1.0', output)

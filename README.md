@@ -1,2 +1,2 @@
 # IDE-Template
-Code to make your own text editor!
+This is all of the basic code needed to write Python, save Python as, save Python, open Python previous saves, and Run Python code.  This is the most simple method us at Electrical Development could think of.  We challenge you to try to find a way to do this in less amounts of lines (removing spaces doesn't count).  We ask that if you decide to continue this project that you please credit Electrical Development somewhere in your coding environment.
